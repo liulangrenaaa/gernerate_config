@@ -11,6 +11,9 @@ try:
         if line.endswith("=y\n"):
             config_file_processed.writelines("\"" + line[:-3] + "\",\n")
             continue
+        if line.endswith("=m\n"):
+            config_file_processed.writelines("\"" + line[:-3] + "\",\n")
+            continue
         print(line)
 finally:
     config_file.close()
